@@ -6,16 +6,14 @@ import { Todo } from '../../todo';
   standalone: true,
   imports: [],
   templateUrl: './todo-item.component.html',
-  styleUrl: './todo-item.component.css'
+  styleUrl: './todo-item.component.css',
 })
 export class TodoItemComponent {
+  @Input() todo: Todo | undefined;
 
-  @Input() todo:Todo | undefined; 
-  
-  constructor(){}
+  constructor() {}
 
-  DeleteClicked(todo:Todo | undefined){
-
-    console.log("Delete btn has been clicked", todo)
+  DeleteClicked(todo: Todo | undefined) {
+    console.log('Delete btn has been clicked', todo);
   }
 }
