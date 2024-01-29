@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output , EventEmitter} from '@angular/core';
+
 import { Todo } from '../../todo';
 
 @Component({
@@ -10,10 +11,13 @@ import { Todo } from '../../todo';
 })
 export class TodoItemComponent {
   @Input() todo: Todo | undefined;
+  @Output() todoDelete: EventEmitter<Todo> = new EventEmitter ();
 
   constructor() {}
 
   DeleteClicked(todo: Todo | undefined) {
+
+    this.todoDelete.emit(todo);
     console.log('Delete btn has been clicked', todo);
   }
 }

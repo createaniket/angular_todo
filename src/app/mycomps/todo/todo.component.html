@@ -1,5 +1,5 @@
 
     <div *ngFor="let todo of todos">
-        <app-todo-item [todo]="todo"></app-todo-item>
+        <app-todo-item [todo]="todo" (todoDelete)="Deletetodo($event)" ></app-todo-item>
     </div>
 

@@ -41,4 +41,24 @@ export class TodoComponent {
       },      
     ]
   } 
+
+
+  ngOnInit(){
+
+  }
+
+  Deletetodo(todo: Todo) {
+    console.log("I have been in git in parent", todo);
+
+    const index = this.todos?.indexOf(todo);
+
+    console.log("Index:", index);
+
+    if (index !== undefined && index !== -1) {
+        this.todos?.splice(index, 1);
+    } else {
+        console.error("Todo not found in the array.");
+    }
+}
+
 }
